@@ -14,8 +14,7 @@ Given any medical transcript or patient condition, this solution would predict t
 | BERT                    |   BERT         |  59.376            | 55.468             | 47.264             |
 | BERT                    |   RoBERTa      |  66.073            | 56.211             | 43.313             |
 | BERT                    |   DistilBERT   |  73.438            | 56.099             | 54.282             |
-| BERT                    |   ALBERT       |  71.070            | 67.160             | 58.594             |
-| BERT                    |   BlueBERT     |  82%               | 89%                | 50%                |
+| BERT                    |   BlueBERT     |  71.070            | 67.160             | 58.594             |
 | MedicalTokenizer + BERT |   BERT         |  84%               | 90%                | 61%                |
 | MedicalTokenizer + BERT |   RoBERTa      |  50%               | 65%                | 15%                |
 | MedicalTokenizer + BERT |   DistilBERT   |  50%               | 65%                | 15%                |
