@@ -7,3 +7,18 @@ Elevent percent of the respondents surveyed, for example, could not find an appo
 With the knowledge of which medical specialty area to focus on, a patient can receive targeted help much faster through consulting specialist doctors. To alleviate waiting times and predict which area of medical specialty to focus on, we can utilize natural language processing (NLP) to solve this task.
 
 Given any medical transcript or patient condition, this solution would predict the medical specialty that the patient should seek help in. Ideally, given a sufficiently comprehensive transcript (and dataset), one would be able to predict exactly which illness he is suffering from.
+
+| Tokenizer               |  Embeddings    |                    F1-Macro Score (%)                      |
+|:-----------------------:|----------------|-------------------|-------------------|--------------------|
+| Tokenizer               |  Embeddings    | BaselineLSTM (50) | BaselineLSTM (128)| BaselineLSTM (128) |
+|:-----------------------:|----------------|-------------------|-------------------|--------------------|
+| BERT                    |   BERT         |  84%              | 90%               | 61%                |
+| BERT                    |   RoBERTa      |  50%              | 65%               | 15%                |
+| BERT                    |   DistilBERT   |  50%              | 65%               | 15%                |
+| BERT                    |   ALBERT       |  17%              | 49%               | 14%                |
+| BERT                    |   BlueBERT     |  82%              | 89%               | 50%                |
+| MedicalTokenizer + BERT |   BERT         |  84%              | 90%               | 61%                |
+| MedicalTokenizer + BERT |   RoBERTa      |  50%              | 65%               | 15%                |
+| MedicalTokenizer + BERT |   DistilBERT   |  50%              | 65%               | 15%                |
+| MedicalTokenizer + BERT |   ALBERT       |  17%              | 49%               | 14%                |
+| MedicalTokenizer + BERT |   BlueBERT     |  82%              | 89%               | 50%                |
