@@ -8,8 +8,6 @@ With the knowledge of which medical specialty area to focus on, a patient can re
 
 Given any medical transcript or patient condition, this solution would predict the medical specialty that the patient should seek help in. Ideally, given a sufficiently comprehensive transcript (and dataset), one would be able to predict exactly which illness he is suffering from.
 
-| Tokenizer               |  Embeddings    |                    F1-Macro Score (%)                      |
-|:-----------------------:|----------------|-------------------|-------------------|--------------------|
 | Tokenizer               |  Embeddings    | BaselineLSTM (50) | BaselineLSTM (128)| BaselineLSTM (128) |
 |:-----------------------:|----------------|-------------------|-------------------|--------------------|
 | BERT                    |   BERT         |  84%              | 90%               | 61%                |
