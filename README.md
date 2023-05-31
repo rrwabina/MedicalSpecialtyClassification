@@ -22,6 +22,9 @@ With the knowledge of which medical specialty area to focus on, a patient can re
 
 Given any medical transcript or patient condition, this solution would predict the medical specialty that the patient should seek help in. Ideally, given a sufficiently comprehensive transcript (and dataset), one would be able to predict exactly which illness he is suffering from.
 
+## Process
+
+The figure below illustrates a comprehensive pipeline for NLP text classification in the domain of medical transcription. This pipeline encompasses crucial steps necessary for achieving accurate classification results, including data preprocessing, tokenization, random oversampling, dataset iteration involving shuffle and batching, dataset splitting, embeddings, LSTM classification, and evaluation metrics. By providing a systematic and structured approach, this pipeline serves as a valuable guide for viewers, enabling them to effectively address the challenges specific to the medical transcription domain.
 
 <center>
 <img src = "/figures/framework_final.png" width = "808"/>
