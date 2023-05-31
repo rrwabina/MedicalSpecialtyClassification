@@ -29,6 +29,43 @@ from nltk.tokenize import word_tokenize
 from nltk.tokenize import sent_tokenize
 from nltk.stem import WordNetLemmatizer 
 
+class LSTMClassifier(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(LSTMClassifier, self).__init__()
+        self.hidden_size = hidden_size
+        self.lstm = nn.LSTM(input_size, hidden_size)
+        self.fc = nn.Linear(hidden_size, output_size)
+
+    def forward(self, inputs):
+        _, (hidden, _) = self.lstm(inputs)
+        hidden = hidden.squeeze(0)  
+        output = self.fc(hidden)
+        return output
+    
+def epoch_time(start_time, end_time):
+    elapsed_time = end_time - start_time
+    elapsed_mins = int(elapsed_time / 60)
+    elapsed_secs = int(elapsed_time - (elapsed_mins * 60))
+    return elapsed_mins, elapsed_secs
+
+def get_accuracy(preds, y):
+    batch_corr = (preds == y).sum()
+    acc = batch_corr / len(y)
+    return acc
+
+def eval_predictions(predictions, labels):
+    predicted_labels = torch.argmax(predictions, dim = 1)
+    true_labels = labels.numpy()
+
+    accuracy  = accuracy_score(true_labels,  predicted_labels)
+    precision = precision_score(true_labels, predicted_labels, average = 'weighted')
+    recall = recall_score(true_labels, predicted_labels, average = 'weighted')
+    f1 = f1_score(true_labels, predicted_labels, average = 'weighted')
+    return {
+        'Accuracy':     np.round(accuracy, 4),
+        'Precision':    np.round(precision, 4),
+        'Recall':       np.round(recall, 4),
+        'F1-score':     np.round(f1, 4)}
 
 def plot_metrics(train_losses, valid_losses, train_accurs, valid_accurs):
     alpha = 0.3
