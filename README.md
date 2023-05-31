@@ -40,6 +40,8 @@ BlueBERT and RoBERTa are some of the tokenizers which can handle medical texts. 
 
 We start creating the tokenizer by instantiating a <code>Tokenizer</code> object with a model, then set its <code>normalizer, pre_tokenizer, post_processor</code>, and <code>decoder</code> attribute to the values we want. We specified the <code>[UNK]</code> token so that the model knows what to return when it encounters characters it hasn't seen before. We utilized the WordPiece tokenizer as the foundation of our customized tokenizer. During tokenization, the first step is normalization. Since BERT is widely used, there is a BertNormalizer with the classic options we can set for BERT: lowercase and strip_accents; clean_text to remove all control characters and replace repeating spaces with a single one.
 
+### Summary of pretrained BERT-based models without fine-tuning
+
 |   Model        | Baseline LSTM (50) | BaselineLSTM (128) | BaselineLSTM (256) |
 |----------------|--------------------|--------------------|--------------------|
 |   BERT         |  59.376            | 55.468             | 47.264             |
