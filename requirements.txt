@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+spacy
+scikit-learn
+torch
+datasets
+sentence-transformers
+imbalanced-learn
+nltk
+transformers
+tokenizers
