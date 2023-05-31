@@ -1,4 +1,18 @@
 # Medical Specialty Classification
+In this repository, we utilized BERT models to develop a a classification model in classifying transcription texts to medical specialties. We implemented all models using PyTorch version 3.9, where the Intel 8th generation CPU performed all simulation in this study witn an NVIDIA RTX 1050Ti 4GB graphics card.
+
+You can access the main Jupyter Notebook in the file:
+```
+../src/RADI623_A1_RomenSamuelWabina.ipynb
+```
+
+## Dependencies
+You need to install the prerequisites.
+```
+pip install -r requirements.txt
+```
+
+## Background
 
 The problem of predicting one’s illnesses wrongly through self-diagnosis in medicine is very real. In a report by the [Telegraph](https://www.telegraph.co.uk/news/health/news/11760658/One-in-four-self-diagnose-on-the-internet-instead-of-visiting-the-doctor.html), nearly one in four self-diagnose instead of visiting the doctor. Out of those who misdiagnose, nearly half have misdiagnosed their illness wrongly [reported](https://bigthink.com/health/self-diagnosis/). While there could be multiple root causes to this problem, this could stem from a general unwillingness and inability to seek professional help.
 
