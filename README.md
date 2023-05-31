@@ -9,14 +9,10 @@ With the knowledge of which medical specialty area to focus on, a patient can re
 Given any medical transcript or patient condition, this solution would predict the medical specialty that the patient should seek help in. Ideally, given a sufficiently comprehensive transcript (and dataset), one would be able to predict exactly which illness he is suffering from.
 
 
-| Tokenizer               |  Embeddings    | Baseline LSTM (50) | BaselineLSTM (128) | BaselineLSTM (256) |
-|:-----------------------:|----------------|--------------------|--------------------|--------------------|
-| BERT                    |   BERT         |  59.376            | 55.468             | 47.264             |
-| BERT                    |   RoBERTa      |  66.073            | 56.211             | 43.313             |
-| BERT                    |   DistilBERT   |  73.438            | 56.099             | 54.282             |
-| BERT                    |   BlueBERT     |  71.070            | 67.160             | 58.594             |
-| MedicalTokenizer + BERT |   BERT         |  84%               | 90%                | 61%                |
-| MedicalTokenizer + BERT |   RoBERTa      |  50%               | 65%                | 15%                |
-| MedicalTokenizer + BERT |   DistilBERT   |  50%               | 65%                | 15%                |
-| MedicalTokenizer + BERT |   ALBERT       |  17%               | 49%                | 14%                |
-| MedicalTokenizer + BERT |   BlueBERT     |  82%               | 89%                | 50%                |
+|   Model        | Baseline LSTM (50) | BaselineLSTM (128) | BaselineLSTM (256) |
+|----------------|--------------------|--------------------|--------------------|
+|   BERT         |  59.376            | 55.468             | 47.264             |
+|   RoBERTa      |  66.073            | 56.211             | 43.313             |
+|   DistilBERT   |  73.438            | 56.099             | 54.282             |
+|   BlueBERT     |  71.070            | 67.160             | 58.594             |
+
