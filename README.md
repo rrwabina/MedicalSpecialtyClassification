@@ -24,21 +24,18 @@ Given any medical transcript or patient condition, this solution would predict t
 
 
 <center>
-<img src = "/figures/framework_final.PNG" width = "808"/>
+<img src = "/figures/framework_final.png" width = "808"/>
 </center>
 
 The vocabulary used in the field of medicine is extremely specialized, unique, and frequently made up of complicated jargon that is only applicable to that field. Therefore, using a specialized tokenizer created especially for medical texts can have a number of advantages in terms of precision, comprehension, and context preservation. Many medical phrases contain compound words, acronyms, abbreviations, and unique symbols that may not be properly handled by general tokenizers. 
 
 BlueBERT and RoBERTa are some of the tokenizers which can handle medical texts. However, for the sake of learning, we want to train our own tokenizer using the given dataset as part of the proposed model to determine if it can improved our classification performance. We can construct our own tokenizer to successfully handle such scenarios by using the given dataset <code>mtsamples</code>. Becuase of this, better tokenization of medical terminology is made possible by this level of personalization, avoiding the loss of important information during preprocessing. 
 
-BERT's tokenizer utilizes subword tokenization, which means that words are split into subword units based on learned vocabulary. This is indicated by the presence of <code>'##'</code> preceding some tokens, such as <code>'##ache', '##ost', '##omy', 'bro', '##nch', '##os', '##co', '##py', 'tr', '##ache', '##al', 'ste', '##nt', 'dil', '##ation', 'tr', '##ache', '##a', 'shi', '##ley', 'can', '##nu', '##la', 'tr', '##ache', '##ost', '##omy'</code>. This subword tokenization enables BERT to handle out-of-vocabulary words and capture subword-level information. This example is shown below:
-To create a customized tokenizer, we apply the high-level steps in the tokenization pipeline as presented from the HuggingFace library. Before splitting a text into tokens, the customer tokenizer should be initialized first by performing two steps to the dataset: normalization and pre-tokenization. The normalization step involves some general cleanup, such as removing needless whitespace, lowercasing, and/or removing accents. If you’re familiar with Unicode normalization (such as NFC or NFKC), this is also something the tokenizer may apply.
-
-We start creating the tokenizer by instantiating a <code>Tokenizer</code> object with a model, then set its <code>normalizer, pre_tokenizer, post_processor</code>, and <code>decoder</code> attribute to the values we want. We specified the <code>[UNK]</code> token so that the model knows what to return when it encounters characters it hasn't seen before. We utilized the WordPiece tokenizer as the foundation of our customized tokenizer. During tokenization, the first step is normalization. Since BERT is widely used, there is a BertNormalizer with the classic options we can set for BERT: lowercase and strip_accents; clean_text to remove all control characters and replace repeating spaces with a single one.
-
 <center>
 <img src = "/figures/medical_tokenizer.PNG" width = "808"/>
 </center>
+
+We start creating the tokenizer by instantiating a <code>Tokenizer</code> object with a model, then set its <code>normalizer, pre_tokenizer, post_processor</code>, and <code>decoder</code> attribute to the values we want. We specified the <code>[UNK]</code> token so that the model knows what to return when it encounters characters it hasn't seen before. We utilized the WordPiece tokenizer as the foundation of our customized tokenizer. During tokenization, the first step is normalization. Since BERT is widely used, there is a BertNormalizer with the classic options we can set for BERT: lowercase and strip_accents; clean_text to remove all control characters and replace repeating spaces with a single one.
 
 |   Model        | Baseline LSTM (50) | BaselineLSTM (128) | BaselineLSTM (256) |
 |----------------|--------------------|--------------------|--------------------|
