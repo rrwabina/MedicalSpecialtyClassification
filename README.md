@@ -27,7 +27,7 @@ Given any medical transcript or patient condition, this solution would predict t
 The figure below illustrates a comprehensive pipeline for NLP text classification in the domain of medical transcription. This pipeline encompasses crucial steps necessary for achieving accurate classification results, including data preprocessing, tokenization, random oversampling, dataset iteration involving shuffle and batching, dataset splitting, embeddings, LSTM classification, and evaluation metrics. By providing a systematic and structured approach, this pipeline serves as a valuable guide for viewers, enabling them to effectively address the challenges specific to the medical transcription domain.
 
 <center>
-<img src = "/figures/framework_final.png" width = "808"/>
+<img src = "/figures/framework_super.png" width = "808"/>
 </center>
 
 The vocabulary used in the field of medicine is extremely specialized, unique, and frequently made up of complicated jargon that is only applicable to that field. Therefore, using a specialized tokenizer created especially for medical texts can have a number of advantages in terms of precision, comprehension, and context preservation. Many medical phrases contain compound words, acronyms, abbreviations, and unique symbols that may not be properly handled by general tokenizers. 
